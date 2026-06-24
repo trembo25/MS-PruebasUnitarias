@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: gestionproveedores
+  datasource:
+    url: jdbc:mysql://localhost:3306/orderflow-v1-m7
+    username: root
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8086
+
+springdoc:
+  api-docs:
+    enabled: true
+    version: openapi_3_0
+  swagger-ui:
+    enabled: true
+eureka:
+  cliente:
+    server-url:
+      defaultZone: http//localhost:8761/eureka/
