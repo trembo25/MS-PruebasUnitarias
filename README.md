@@ -27,7 +27,7 @@ Cada microservicio cuenta con su propia documentación interactiva generada con 
 
 El proyecto incluye un conjunto de pruebas unitarias para garantizar la calidad, fiabilidad y el correcto funcionamiento de la lógica de negocio de forma aislada.
 
-- Desarrolladas utilizando el estándar de **JUnit 5** y **Mockito**.
+- Desarrolladas utilizando el estándar de **Mockito**.
 - Enfocadas en validar el comportamiento esperado y el correcto manejo de excepciones en las capas principales (Controllers y Services).
 - **Cómo ejecutarlas:** Puedes correrlas directamente desde tu entorno de desarrollo (IDE) o ejecutando el comando `mvn test` en la terminal dentro de la carpeta correspondiente a cada microservicio.
 
