@@ -1,0 +1,77 @@
+server:
+    port: 8080
+
+spring:
+    application:
+        name: apigateway
+    cloud:
+        gateway:
+            discovery:
+                locator:
+                    enabled: true
+                    lower-case-service-id: true
+            routes:
+                # 1. Gestión de Menú
+                - id: menu-ms
+                  uri: lb://gestionmenu
+                  predicates:
+                      - Path=/v1/orderflow/gestionmenu/**
+
+                # 2. Gestión de Cocina
+                - id: cocina-ms
+                  uri: lb://gestioncocina
+                  predicates:
+                      - Path=/v1/orderflow/gestioncocina/**
+
+                # 3. Gestión de Inventario
+                - id: inventario-ms
+                  uri: lb://gestioninventario
+                  predicates:
+                      - Path=/v1/orderflow/gestioninventario/**
+
+                # 4. Gestión de Reportes
+                - id: reportes-ms
+                  uri: lb://gestionreportes
+                  predicates:
+                      - Path=/v1/orderflow/gestionreportes/**
+
+                # 5. Gestión de Proveedores
+                - id: proveedores-ms
+                  uri: lb://gestionproveedores
+                  predicates:
+                      - Path=/v1/orderflow/gestionproveedores/**
+
+                # 6. Gestión de Pedidos
+                - id: pedidos-ms
+                  uri: lb://gestionpedidos
+                  predicates:
+                      - Path=/v1/orderflow/gestionpedidos/**
+
+                # 7. Gestión de Usuarios (Corregido)
+                - id: usuarios-ms
+                  uri: lb://gestionusuarios
+                  predicates:
+                      - Path=/v1/orderflow/gestionempleados/**
+
+                # 8. Gestión de Reservas
+                - id: reservas-ms
+                  uri: lb://gestionreservas
+                  predicates:
+                      - Path=/v1/orderflow/gestionreservas/**
+
+                # 9. Gestión de Mesas
+                - id: mesas-ms
+                  uri: lb://gestionmesas
+                  predicates:
+                      - Path=/v1/orderflow/gestionmesas/**
+
+                # 10. Gestión de Pagos y Facturas
+                - id: pagosyfacturas-ms
+                  uri: lb://gestionpagos
+                  predicates:
+                      - Path=/v1/orderflow/gestionpagos/**
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka/
